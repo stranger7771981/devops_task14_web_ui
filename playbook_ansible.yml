@@ -1,0 +1,19 @@
+---
+- name: Setup App
+  hosts: all
+  remote_user: ubuntu
+  become: true
+
+  tasks:
+
+  - name: Ping
+    ping:
+
+  - name: ensure a container is running
+    docker_container:
+      name: devops_task14_web_ui
+      state: started
+      image: free1as2bird/devops_task14_web_ui
+      pull: true
+      ports:
+       - "80:80"
