@@ -33,3 +33,13 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/devops_task14_web_ui:latest
           
+          
+  deploy:
+  
+    runs-on: ubuntu-latest
+    
+    steps:
+    
+      - name: Ansible
+        run:  ansible-playbook -i hosts.yml playbook_ansible.yml 
+    
