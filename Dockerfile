@@ -1,5 +1,4 @@
 FROM golang:latest 
-COPY index.html /usr/share/nginx/html/index.html
 RUN mkdir /app 
 ADD . /app/ 
 WORKDIR /app 
